@@ -12,12 +12,19 @@
         <h2>URL Shortener</h2>
         <p>Your shortened URL is</p>
         <div class="result-container">
-            <span><a href="<%= `http://localhost:3000/${shortUrl}` %>" target="_blank"><%= shortUrl %></a></span>
-            <span>Copy</span>
+            <span><a id="short-url" href="<%= `/${shortUrl}` %>" target="_blank"><%= shortUrl %></a></span>
+            <span onclick="copyUrl()" class="copy-span" id="copy-action">Copy</span>
         </div>
         <p>It has been converted <%= times %> times</p>
         <br />
         <a href="/"><span class="span-link">Try Another</span></a>
     </div>
+    <script>
+        const copyUrl = () => {
+            const copyTextarea = document.getElementById("short-url").href;
+            navigator.clipboard.writeText(copyTextarea);
+            document.getElementById("copy-action").innerHTML = "Copied";
+        };
+    </script>
 </body>
 </html>

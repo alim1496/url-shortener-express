@@ -66,7 +66,12 @@ app.get("/:shortUrl", (req, res) => {
         if (error) {
             return res.sendStatus(404);
         }
-        res.redirect(results[0].fullUrl);
+
+        if (results.length === 0) {
+            res.render("error.ejs");
+        } else {
+            res.redirect(results[0].fullUrl);
+        }
     });
 });
 
