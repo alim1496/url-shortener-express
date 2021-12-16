@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" type="text/css" href="/styles/home.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>URL Shortener</h2>
+        <p>Your shortened URL is</p>
+        <div class="result-container">
+            <span><a href="<%= `http://localhost:3000/${shortUrl}` %>" target="_blank"><%= shortUrl %></a></span>
+            <span>Copy</span>
+        </div>
+        <p>It has been converted <%= times %> times</p>
+        <br />
+        <a href="/"><span class="span-link">Try Another</span></a>
+    </div>
+</body>
+</html>
